@@ -1,0 +1,19 @@
+store 是应用状态 state 的管理者，包含下列四个函数：
+
+getState() # 获取整个 state
+dispatch(action) # ※ 触发 state 改变的【唯一途径】※
+subscribe(listener) # 您可以理解成是 DOM 中的 addEventListener
+replaceReducer(nextReducer) # 一般在 Webpack Code-Splitting 按需加载的时候用
+
+
+Redux 规定，一个应用只应有一个单一的 store，其管理着唯一的应用状态 state
+若要改变 state，必须 dispatch 一个 action，这是修改应用状态的不二法门
+
+§ 总结
+store 由 Redux 的 createStore(reducer) 生成
+state 通过 store.getState() 获取，本质上一般是一个存储着整个应用状态的对象
+action 本质上是一个包含 type 属性的普通对象，由 Action Creator (函数) 产生
+改变 state 必须 dispatch 一个 action
+reducer 本质上是根据 action.type 来更新 state 并返回 nextState 的函数
+reducer 必须返回值，否则 nextState 即为 undefined
+实际上，state 就是所有 reducer 返回值的汇总
