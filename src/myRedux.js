@@ -6,7 +6,7 @@ import { Provider, connect } from 'react-redux';
 /**
  * 定义一个UI组件
  */
-export default class MyReduxTest extends React.Component {
+class MyReduxTest extends React.Component {
     constructor(){
         console.log(99999999999999999)
         var {name,age} = {name:"kobe",age:12};
@@ -20,7 +20,7 @@ export default class MyReduxTest extends React.Component {
         return (
             <div>
                 <h1 onClick={onChangeText}> {text} </h1>
-                <button onClick={onButtonClick2}>click me2</button>
+                <button onClick={onButtonClick2}>click me222</button>
             </div>
         );
 
@@ -80,12 +80,28 @@ function mapDispatchToProps(dispatch){
 var MyReduxTest2 = connect(mapStateToProps, mapDispatchToProps)(MyReduxTest)
 
 
+/**
+ * 定义一个导出的UI组件
+ */
+export default class MyReduxT extends React.Component {
+    constructor(){
+        super();
+    }
+    render() {
+        return (
+            <Provider store={store}>
+                <MyReduxTest2 />
+            </Provider>
+        );
+
+    }
+}
+
+
+
+
+
 //Provider组件，可以让容器组件拿到 state
-ReactDOM.render(
-    <Provider store={store}>
-        <MyReduxTest2 />
-    </Provider>,
-    document.getElementById('reduxbox')
-)
+
 
 

@@ -4,18 +4,12 @@ import ReactDOM from 'react-dom';
 //
 import Hello from './Hello';
 import MyRedux from './myRedux';
+import MyRouter from './myRouter';
 import MyApp from './component/MyApp';
 import './App.css';
 
 ReactDOM.render(
-  <MyApp />,
+  <MyRouter />,
   document.getElementById('root')
 );
 
-
-
-
-ReactDOM.render(
-    <MyRedux />,
-    document.getElementById('test')
-);

@@ -7,14 +7,17 @@ class MyTable extends React.Component {
 
 
   render() {
-
       var items = [];
-      if(this.props.items.length == 0){
-          items.push(<tr><td colSpan="5" className="tempEmpty">暂无用户</td></tr>);
+      if(this.props.items){
+          if( this.props.items.length == 0){
+              items.push(<tr><td colSpan="5" className="tempEmpty">暂无用户</td></tr>);
+          }else{
+              this.props.items.forEach(item => {
+                  items.push(<MyListItem key={item.name} name={item.name} item={item} removeTr={this.props.remove.bind(this)}/>);
+              });
+          }
       }else{
-          this.props.items.forEach(item => {
-              items.push(<MyListItem key={item.name} name={item.name} item={item} removeTr={this.props.remove.bind(this)}/>);
-          });
+          items.push(<tr><td colSpan="5" className="tempEmpty">暂无用户</td></tr>);
       }
 
 
