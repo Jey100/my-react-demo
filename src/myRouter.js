@@ -8,7 +8,7 @@ import {
 import List from './component/MyTable';
 import Home from './component/MyApp';
 import Add from './component/MyAdd';
-import MyRedux from './myRedux';
+import MyRedux from './redux_test/myRedux';
 
 const MyRouter = () => (
     <Router>

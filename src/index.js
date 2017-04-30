@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom';
 //import App from './App';
 //
 import Hello from './Hello';
-import MyRedux from './myRedux';
+import MyRedux from './redux_test/myRedux';
+import StartMyRedux from './redux_test/start';
 import MyRouter from './myRouter';
-import MyApp from './component/MyApp';
+//import MyApp from './component/MyApp';
 import './App.css';
 
 ReactDOM.render(
-  <MyRouter />,
+  <StartMyRedux />,
   document.getElementById('root')
 );
 
